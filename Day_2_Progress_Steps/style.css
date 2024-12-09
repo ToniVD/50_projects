@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* To create a variable with global scope, declare it inside the :root selector. 
+The :root selector matches the document's root element. */
+:root{
+    --empty:#AF8260;
+    --fill:#803D3B;
+}
+
+* {
+    box-sizing: border-box;  /* padding and border are included in the width and height */
+}
+
+body {
+    margin: 0;
+    font-family: "Muli", sans-serif;
+    background-color: #E4C59E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 15px;
+    max-width: 100%; 
+    width: 400px;
+}
+
+/* ::before pseudo-element inserts some content before the content of the specified element */
+/* brown line behind at 100% to show no progress */
+
+.progress-container::before {
+    content: '';
+    background-color: var(--empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* Shift the line upwards by 50% of its own height to enusre centering */
+    z-index: -1;   /* Place line behind numbers */
+    height: 4px;
+    width: 100%;
+}
+
+/* Progress line */
+.progress {
+    background-color: var(--fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* Shift the line upwards by 50% of its own height to enusre centering */
+    z-index: -1;   /* Place line behind numbers */
+    height: 4px;
+    width: 0%;
+    transition: 0.5s ease;
+}
+
+.circle {
+    height: 35px;
+    width: 35px;
+    background-color: #322C2B;
+    color: var(--empty);
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--empty);
+    transition: 0.5s ease;
+}
+
+.circle.active{
+    border-color: var(--fill);
+}
+
+.btn-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background-color: var(--fill);
+    color: var(--empty);
+    border-radius: 5px;
+    border: 0;
+    height: 25px;
+    width: 25px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* :active pseudo-class is used to select and style an element that is being activated by the user */
+.btn:active{
+    transform: scale(0.9);
+}
+
+.btn:disabled{
+    background-color: var(--empty);
+    color: var(--fill);
+    cursor: not-allowed;
+}
