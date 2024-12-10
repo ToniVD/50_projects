@@ -15,4 +15,42 @@ body {
     margin: 0;
 }
 
-/* .widget-container{} */
+.search {
+    position: relative;
+    height: 50px;
+}
+
+.search .input {
+    border: 0;
+    background-color: white;
+    font-size: 15px;
+    padding: 15px;
+    height: 45px;
+    width: 45px;
+    transition: width 0.3s;
+}
+
+.btn {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 45px;
+    transition: transform 0.3s;
+}
+
+.btn:focus, .input:focus {
+    outline: none;
+}
+
+.search.active .input{
+    width: 195px;
+}
+
+.search.active .btn{
+    transform: translateX(193px);
+}
