@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;  /* padding and border are included in the width and height */
+}
+
+body {
+    background-color: #FFE8C5;
+    font-family: "Delius", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
